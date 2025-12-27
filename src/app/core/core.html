@@ -1,0 +1,32 @@
+<div class="container">
+
+    
+    <div class="flex-1">
+        <form class="form-group">
+            <!-- Interpolation -->
+
+            <div class="row">
+                <h4>{{ title }}</h4> 
+                <app-number-viewer [usdValue]="usd" [exchangeRate]="exchangeRate"></app-number-viewer> 
+            </div>
+
+            <div class="column">
+                <label>USD</label>
+                <!-- two way binding -->
+                <input type="number" [(ngModel)]="usd" name="usd" (ngModelChange)="changeInInput('USD')"/>
+            </div>
+            <div class="column">
+                <label>Exchange Rate</label>
+                <input type="number" [(ngModel)]="exchangeRate" name="exchangeRate" (ngModelChange)="changeInInput('Exchange Rate')"/>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+
+
+
+
+
+

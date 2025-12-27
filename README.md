@@ -4,9 +4,9 @@
 
 ---
 
-## **PHASE 1 — Fundamentals (Must Know First)**
+## **PHASE 1 — Fundamentals (Must Know First)** [Link text](documentation/FUNDAMENTALS.md)
 
-### 1️⃣ Introduction [Link text](documentation/INTRODUCTION.md)
+### 1️⃣ Introduction
 
 * What is Angular?
 * Why Angular?
