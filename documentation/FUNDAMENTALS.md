@@ -1,4 +1,47 @@
-## ✅ What is Angular?
+# Phase 1 — Fundamentals
+
+## Outline
+- [1. Introduction](#1-introduction)
+  - [What is Angular?](#what-is-angular)
+  - [Why Angular?](#why-angular)
+  - [Angular vs React vs Vue](#angular-vs-react-vs-vue-short-clear-key-points)
+  - [SPA vs MPA](#spa-vs-mpa)
+  - [Angular Architecture Overview](#angular-architecture--compilation-process)
+- [2. Angular Basics](#2-angular-basics)
+  - [Angular CLI](#angular-cli--commands-with-flags-simple-guide)
+  - [Project structure](#angular-project-structure-simple-explanation)
+  - [main.ts](#maints-explained-simply)
+  - [Bootstrap process](#angular-bootstrap-process-simple-explanation)
+  - [Standalone vs NgModules](#standalone-components-vs-ngmodules)
+- [3. Components](#3-components)
+  - [What is a Component?](#what-is-a-component)
+  - [Component metadata](#component-metadata)
+  - [Templates](#1%EF%B8%8F%E2%83%A3-templates-html)
+  - [Styles](#2%EF%B8%8F%E2%83%A3-styles-cssscss)
+  - [Component lifecycle](#component-lifecycle)
+  - [constructor vs ngOnInit](#4%EF%B8%8F%E2%83%A3-constructor-vs-ngoninit)
+  - [Change detection basics](#5%EF%B8%8F%E2%83%A3-change-detection-basics)
+- [4. Templates & Data Binding](#4-templates--data-binding)
+  - [Interpolation](#interpolation)
+  - [Property binding](#property-binding)
+  - [Event binding](#event-binding)
+  - [Two-way binding](#two-way-binding)
+  - [Template expressions](#template-expressions)
+  - [Safe navigation operator](#safe-navigation-operator)
+- [5. Directives](#5-directives)
+  - [Attribute directives](#attribute-directives)
+  - [Structural directives](#structural-directives)
+  - [`*ngIf`, `*ngFor`, `*ngSwitch`](#built-in-structural-directives)
+  - [Custom attribute directives](#custom-attribute-directive)
+  - [Custom structural directives](#custom-structural-directive)
+- [6. Pipes](#6-pipes)
+  - [Built-in pipes](#built-in-pipes)
+  - [Custom pipes](#custom-pipes)
+  - [Pure vs impure pipes](#pure-vs-impure-pipes)
+
+## 1. Introduction
+
+### What is Angular?
 
 * Angular is a **frontend framework** for building **single-page applications (SPAs)**
 * Used mainly for **large and enterprise-level applications**
@@ -9,97 +52,77 @@
 
 ---
 
-## ⭐ What Makes Angular Different from Others?
+### Why Angular? (What makes Angular different)
 
-### 1️⃣ **Complete Framework**
+#### 1️⃣ Complete Framework
 
 * Angular provides **everything out of the box**
-
   * Routing
   * Forms
   * HTTP
   * Dependency Injection
 * No need to choose many external libraries
 
----
-
-### 2️⃣ **Strong Structure & Opinionated**
+#### 2️⃣ Strong Structure & Opinionated
 
 * Enforces a **clear architecture**
 * Easier for large teams to work together
 * Less architectural confusion
 
----
-
-### 3️⃣ **TypeScript First**
+#### 3️⃣ TypeScript First
 
 * Strong typing
 * Fewer runtime bugs
 * Better tooling & refactoring
 
----
-
-### 4️⃣ **Built-in Dependency Injection**
+#### 4️⃣ Built-in Dependency Injection
 
 * Makes code reusable
 * Easier testing
 * Better separation of concerns
 
----
-
-### 5️⃣ **Enterprise Focus**
+#### 5️⃣ Enterprise Focus
 
 * Designed for **scalability and maintainability**
 * Preferred for long-term, complex projects
 
+---
 
-## ✅ Why Angular?
+### Why Angular? (Quick reasons)
 
 Angular is chosen mainly for **large, complex, and long-term applications**.
 
----
-
-### 🔹 1️⃣ Strong Structure
+#### 🔹 1️⃣ Strong Structure
 
 * Angular enforces a **clear architecture**
 * Easy to maintain large codebases
 * Best for **team-based development**
 
----
-
-### 🔹 2️⃣ All-in-One Framework
+#### 🔹 2️⃣ All-in-One Framework
 
 * Comes with **routing, forms, HTTP, DI, testing**
 * No need to assemble many third-party libraries
 * Saves setup and decision time
 
----
-
-### 🔹 3️⃣ TypeScript by Default
+#### 🔹 3️⃣ TypeScript by Default
 
 * Strong typing
 * Better error detection at compile time
 * Easier refactoring and safer code
 
----
-
-### 🔹 4️⃣ Built for Enterprise
+#### 🔹 4️⃣ Built for Enterprise
 
 * Scales well as the app grows
 * Predictable patterns
 * Used heavily in banking, healthcare, corporate tools
 
----
-
-### 🔹 5️⃣ Powerful Tooling
+#### 🔹 5️⃣ Powerful Tooling
 
 * Angular CLI for scaffolding, build, test, lint
 * Consistent development experience
 * Faster onboarding for new developers
 
----
-
-### 🔹 6️⃣ Performance Features
+#### 🔹 6️⃣ Performance Features
 
 * Lazy loading
 * Ahead-of-Time (AOT) compilation
@@ -108,14 +131,14 @@ Angular is chosen mainly for **large, complex, and long-term applications**.
 
 ---
 
-## ⭐ What Makes Angular a Good Choice?
+### What Makes Angular a Good Choice?
 
 * You want **long-term maintainability**
 * You have **large teams**
 * You prefer **clear rules over flexibility**
 * You need a **complete solution**, not just a UI library
 
-## ✅ Angular vs React vs Vue (Short, Clear, Key Points)
+### Angular vs React vs Vue (Short, Clear, Key Points)
 
 ---
 
@@ -202,56 +225,56 @@ Angular is chosen mainly for **large, complex, and long-term applications**.
 
 ---
 
-## ✅ SPA vs MPA
+### SPA vs MPA
 
 ---
 
-## 🔹 SPA (Single Page Application)
+#### SPA (Single Page Application)
 
-### What it is
+##### What it is
 
 * The app loads **one HTML page**
 * Content updates **without full page reload**
 * Navigation happens using **JavaScript**
 
-### How it works
+##### How it works
 
 * Browser loads app once
 * Angular/React/Vue fetch data via APIs
 * UI updates dynamically
 
-### Examples
+##### Examples
 
 * Gmail
 * Facebook
 * Angular dashboards
 
-### Pros
+##### Pros
 
 * Faster navigation
 * Better user experience
 * Less server load after first load
 
-### Cons
+##### Cons
 
 * Initial load can be heavy
 * SEO needs extra handling (SSR)
 
 ---
 
-## 🔹 MPA (Multi Page Application)
+#### MPA (Multi Page Application)
 
-### What it is
+##### What it is
 
 * Each page is a **separate HTML page**
 * Every navigation causes a **full page reload**
 
-### How it works
+##### How it works
 
 * Browser requests a new page from server
 * Server renders HTML each time
 
-### Examples
+##### Examples
 
 * Traditional websites
 * News portals
@@ -290,7 +313,7 @@ Angular is chosen mainly for **large, complex, and long-term applications**.
 
 ---
 
-# ✅ Angular Architecture & Compilation Process
+### Angular Architecture & Compilation Process
 
 ---
 
@@ -689,23 +712,29 @@ Tree shaking struggles when:
 
 ---
 
+#### Quick questions — Introduction
 
-
-
-# 📌 Angular CLI – Commands with Flags (Simple Guide)
+1. What is Angular and how is it different from plain JavaScript?
+2. Why is Angular considered a full framework rather than a library?
+3. In what scenarios would you choose Angular over React or Vue?
+4. What is the difference between SPA and MPA, and how does Angular support SPA?
+5. Can you explain Angular architecture at a high level?
 
 ---
 
-## 🔹 What is Angular CLI?
+## 2. Angular Basics
+
+### Angular CLI – Commands with Flags (Simple Guide)
+
+#### What is Angular CLI?
 
 Angular CLI is a **tool** that helps you **create, run, build, test, and manage Angular apps** using simple commands.
 
-
-## 🔸 `ng new` – Create a New App
+#### `ng new` – Create a New App
 
 **Use:** Creates a new Angular project with all setup done.
 
-### Common Flags
+##### Common Flags
 
 * `--routing` → Adds routing support
 * `--style=scss` → Use SCSS instead of CSS
@@ -717,11 +746,11 @@ Angular CLI is a **tool** that helps you **create, run, build, test, and manage 
 
 ---
 
-## 🔸 `ng serve` – Run the App
+#### `ng serve` – Run the App
 
 **Use:** Runs the app locally for development.
 
-### Common Flags
+##### Common Flags
 
 * `--open` → Opens browser automatically
 * `--port=4201` → Runs app on a specific port
@@ -732,11 +761,11 @@ Angular CLI is a **tool** that helps you **create, run, build, test, and manage 
 
 ---
 
-## 🔸 `ng build` – Build the App
+#### `ng build` – Build the App
 
 **Use:** Creates files ready for deployment.
 
-### Common Flags
+##### Common Flags
 
 * `--configuration=production` → Production build
 * `--output-path` → Where build files are saved
@@ -747,11 +776,11 @@ Angular CLI is a **tool** that helps you **create, run, build, test, and manage 
 
 ---
 
-## 🔸 `ng generate` / `ng g` – Create Files
+#### `ng generate` / `ng g` – Create Files
 
 **Use:** Generates Angular building blocks.
 
-### Common Flags
+##### Common Flags
 
 * `--standalone` → Create standalone component
 * `--skip-tests` → Skip test files
@@ -763,7 +792,7 @@ Angular CLI is a **tool** that helps you **create, run, build, test, and manage 
 
 ---
 
-## 🔹 Common `ng generate` Aliases
+#### Common `ng generate` Aliases
 
 | Purpose   | Command   |
 | --------- | --------- |
@@ -779,11 +808,11 @@ Angular CLI is a **tool** that helps you **create, run, build, test, and manage 
 
 ---
 
-## 🔸 `ng test` – Run Unit Tests
+#### `ng test` – Run Unit Tests
 
 **Use:** Runs unit tests.
 
-### Common Flags
+##### Common Flags
 
 * `--watch` → Re-run tests on file changes
 * `--code-coverage` → Generate coverage report
@@ -793,11 +822,11 @@ Angular CLI is a **tool** that helps you **create, run, build, test, and manage 
 
 ---
 
-## 🔸 `ng lint` – Check Code Quality
+#### `ng lint` – Check Code Quality
 
 **Use:** Finds code style and quality issues.
 
-### Common Flags
+##### Common Flags
 
 * `--fix` → Automatically fix issues
 
@@ -805,11 +834,11 @@ Angular CLI is a **tool** that helps you **create, run, build, test, and manage 
 
 ---
 
-## 🔸 `ng update` – Update Angular
+#### `ng update` – Update Angular
 
 **Use:** Safely updates Angular packages.
 
-### Common Flags
+##### Common Flags
 
 * `--force` → Force update (not recommended)
 * `--next` → Update to next version
@@ -819,11 +848,11 @@ Angular CLI is a **tool** that helps you **create, run, build, test, and manage 
 
 ---
 
-## 🔸 `ng add` – Add Libraries
+#### `ng add` – Add Libraries
 
 **Use:** Adds Angular libraries with configuration.
 
-### Common Flags
+##### Common Flags
 
 * Library-specific flags
 * `--skip-confirmation` → Skip prompts
@@ -832,11 +861,11 @@ Angular CLI is a **tool** that helps you **create, run, build, test, and manage 
 
 ---
 
-## 🔸 `ng e2e` – End-to-End Tests
+#### `ng e2e` – End-to-End Tests
 
 **Use:** Runs full app tests simulating real users.
 
-### Common Flags
+##### Common Flags
 
 * `--configuration` → Choose test config
 * `--watch` → Watch mode
@@ -849,7 +878,7 @@ No deep theory, no unnecessary details.
 
 ---
 
-# 📁 Angular Project Structure (Simple Explanation)
+### Angular Project Structure (Simple Explanation)
 
 Angular project structure is designed to **keep code organized, scalable, and easy to maintain**, especially for **large applications**.
 
@@ -857,7 +886,7 @@ Think of it as **separating responsibilities**.
 
 ---
 
-## 🧱 High-Level Structure
+#### High-Level Structure
 
 At the top level, an Angular project looks like this:
 
@@ -874,9 +903,9 @@ Each part has a **clear purpose**.
 
 ---
 
-## 🔹 Root Files (Configuration Level)
+#### Root Files (Configuration Level)
 
-### 📄 `package.json`
+##### 📄 `package.json`
 
 * Lists project dependencies
 * Contains scripts (start, build, test)
@@ -886,7 +915,7 @@ Each part has a **clear purpose**.
 
 ---
 
-### 📄 `angular.json`
+##### 📄 `angular.json`
 
 * Build configuration
 * Environment handling
@@ -896,7 +925,7 @@ Each part has a **clear purpose**.
 
 ---
 
-### 📄 `tsconfig.json`
+##### 📄 `tsconfig.json`
 
 * TypeScript configuration
 * Controls strictness and compilation
@@ -905,7 +934,7 @@ Each part has a **clear purpose**.
 
 ---
 
-### 📄 `README.md`
+##### 📄 `README.md`
 
 * Project documentation
 * Setup instructions
@@ -914,7 +943,7 @@ Each part has a **clear purpose**.
 
 ---
 
-## 📂 `src/` Folder (Actual Application)
+#### 📂 `src/` Folder (Actual Application)
 
 This is where **your application lives**.
 
@@ -929,7 +958,7 @@ src/
 
 ---
 
-### 📄 `index.html`
+##### 📄 `index.html`
 
 * Single HTML file
 * Contains the root Angular tag
@@ -938,7 +967,7 @@ src/
 
 ---
 
-### 📄 `main.ts`
+##### 📄 `main.ts`
 
 * Entry point of the app
 * Starts Angular
@@ -947,7 +976,7 @@ src/
 
 ---
 
-### 📄 `styles.css / styles.scss`
+##### 📄 `styles.css / styles.scss`
 
 * Global styles
 * App-wide themes
@@ -956,7 +985,7 @@ src/
 
 ---
 
-### 📂 `environments/`
+##### 📂 `environments/`
 
 * Environment-specific configuration
 * Example: dev, prod URLs
@@ -965,7 +994,7 @@ src/
 
 ---
 
-## 📂 `app/` Folder (MOST IMPORTANT)
+#### 📂 `app/` Folder (MOST IMPORTANT)
 
 This folder contains **application logic**.
 
@@ -983,7 +1012,7 @@ app/
 
 ---
 
-## 🔹 `app.component`
+##### `app.component`
 
 * Root component
 * Contains layout (header, footer, router outlet)
@@ -992,7 +1021,7 @@ app/
 
 ---
 
-## 🔹 `app.routes`
+##### `app.routes`
 
 * Central routing configuration
 * Defines navigation paths
@@ -1001,7 +1030,7 @@ app/
 
 ---
 
-## 🔹 `core/` (App-Wide Logic)
+##### `core/` (App-Wide Logic)
 
 Contains things used **once** across the app.
 
@@ -1016,7 +1045,7 @@ Examples:
 
 ---
 
-## 🔹 `shared/` (Reusable Things)
+##### `shared/` (Reusable Things)
 
 Contains reusable items used in **many places**.
 
@@ -1032,7 +1061,7 @@ Examples:
 
 ---
 
-## 🔹 `features/` (Business Features)
+##### `features/` (Business Features)
 
 Each feature represents a **real business area**.
 
@@ -1051,7 +1080,7 @@ Examples:
 
 ---
 
-## 🔹 `state/` (State Management)
+##### `state/` (State Management)
 
 Contains:
 
@@ -1063,7 +1092,7 @@ Contains:
 
 ---
 
-## 🧠 Why This Structure Is Important
+#### Why This Structure Is Important
 
 * Easy to understand
 * Easy to scale
@@ -1079,9 +1108,9 @@ Below is a **simple, clear, conceptual explanation of `main.ts`**, exactly what 
 
 
 
-# 📄 `main.ts` (Explained Simply)
+### `main.ts` (Explained Simply)
 
-## ✅ What is `main.ts`?
+#### What is `main.ts`?
 
 `main.ts` is the **starting point of an Angular application**.
 
@@ -1092,7 +1121,7 @@ If Angular were a machine,
 
 ---
 
-## 🔹 Why `main.ts` is Important
+#### Why `main.ts` is Important
 
 Nothing in Angular works until:
 
@@ -1104,7 +1133,7 @@ Nothing in Angular works until:
 
 ---
 
-## 🔹 What Happens in `main.ts` (Conceptually)
+#### What Happens in `main.ts` (Conceptually)
 
 When the browser loads your app:
 
@@ -1117,7 +1146,7 @@ When the browser loads your app:
 
 ---
 
-## 🔹 What `main.ts` Is Responsible For
+#### What `main.ts` Is Responsible For
 
 `main.ts` tells Angular:
 
@@ -1137,7 +1166,7 @@ Examples of what gets configured here (conceptually):
 
 ---
 
-## 🔹 How `main.ts` Fits in the Architecture
+#### How `main.ts` Fits in the Architecture
 
 ```
 Browser
@@ -1153,7 +1182,7 @@ Router
 Feature Components
 ```
 
-## 🔹 Old vs Modern Angular (Important Concept)
+#### Old vs Modern Angular (Important Concept)
 
 * **Old Angular**: `main.ts` bootstrapped a module
 * **Modern Angular (16/17+)**: `main.ts` bootstraps a **standalone root component**
@@ -1166,9 +1195,9 @@ Feature Components
 
 ---
 
-# 🚀 Angular Bootstrap Process (Simple Explanation)
+### Angular Bootstrap Process (Simple Explanation)
 
-## ✅ What is the Bootstrap Process?
+#### What is the Bootstrap Process?
 
 The **bootstrap process** is how **Angular starts the application** and makes it ready for the user.
 
@@ -1177,7 +1206,7 @@ The **bootstrap process** is how **Angular starts the application** and makes it
 
 ---
 
-## 🧠 High-Level Idea
+#### High-Level Idea
 
 When a user opens an Angular app:
 
@@ -1187,9 +1216,9 @@ That entire startup journey is called **bootstrapping**.
 
 ---
 
-## 🔁 Bootstrap Process – Step by Step
+#### Bootstrap Process – Step by Step
 
-### 1️⃣ Browser Loads the App
+##### 1️⃣ Browser Loads the App
 
 * Browser loads `index.html`
 * Downloads compiled JavaScript files
@@ -1199,7 +1228,7 @@ That entire startup journey is called **bootstrapping**.
 
 ---
 
-### 2️⃣ `main.ts` Executes
+##### 2️⃣ `main.ts` Executes
 
 * This is the **first Angular file that runs**
 * It tells Angular:
@@ -1207,7 +1236,7 @@ That entire startup journey is called **bootstrapping**.
 
 ---
 
-### 3️⃣ Angular Runtime Initializes
+##### 3️⃣ Angular Runtime Initializes
 
 Angular now:
 
@@ -1220,7 +1249,7 @@ Angular now:
 
 ---
 
-### 4️⃣ Root Injector Is Created
+##### 4️⃣ Root Injector Is Created
 
 * Angular creates the **root dependency injector**
 * App-wide services are registered
@@ -1230,7 +1259,7 @@ Angular now:
 
 ---
 
-### 5️⃣ Root Component Is Created
+##### 5️⃣ Root Component Is Created
 
 * Angular creates an instance of the **root component**
 * Links it to the custom tag in `index.html`
@@ -1240,7 +1269,7 @@ Angular now:
 
 ---
 
-### 6️⃣ Router Takes Control (If Used)
+##### 6️⃣ Router Takes Control (If Used)
 
 * Router checks the current URL
 * Decides which component should be shown
@@ -1250,7 +1279,7 @@ Angular now:
 
 ---
 
-### 7️⃣ Change Detection Starts
+##### 7️⃣ Change Detection Starts
 
 * Angular starts watching for:
 
@@ -1263,7 +1292,7 @@ Angular now:
 
 ---
 
-## 🔄 Bootstrap Flow (Very Easy View)
+#### Bootstrap Flow (Very Easy View)
 
 ```
 Browser loads page
@@ -1283,7 +1312,7 @@ UI becomes interactive
 
 ---
 
-## 🧠 Why Bootstrap Process Is Important
+#### Why Bootstrap Process Is Important
 
 Because it:
 
@@ -1296,13 +1325,13 @@ This is why Angular apps are **predictable and scalable**.
 
 ---
 
-# ✅ Standalone Components vs NgModules
+### Standalone Components vs NgModules
 
 ---
 
-## 🔹 What is an NgModule? (Old Angular Way)
+#### What is an NgModule? (Old Angular Way)
 
-### NgModule is:
+##### NgModule is:
 
 A **container** used to group:
 
@@ -1318,7 +1347,7 @@ Angular **required NgModules** earlier to tell:
 
 👉 Every Angular app **had to start with an AppModule**.
 
-### Problems with NgModules
+##### Problems with NgModules
 
 * Extra boilerplate
 * Hard to understand for beginners
@@ -1327,9 +1356,9 @@ Angular **required NgModules** earlier to tell:
 
 ---
 
-## 🔹 What are Standalone Components? (Modern Angular Way)
+#### What are Standalone Components? (Modern Angular Way)
 
-### Standalone Components are:
+##### Standalone Components are:
 
 Components that **do not need an NgModule**.
 
@@ -1343,7 +1372,7 @@ Each component:
 
 ---
 
-## 🔁 Key Conceptual Difference
+#### Key Conceptual Difference
 
 | Aspect             | NgModules    | Standalone      |
 | ------------------ | ------------ | --------------- |
@@ -1356,7 +1385,7 @@ Each component:
 
 ---
 
-## 🧠 Why Angular Introduced Standalone
+#### Why Angular Introduced Standalone
 
 Angular introduced standalone components to:
 
@@ -1368,8 +1397,19 @@ Angular introduced standalone components to:
 
 
 
+#### Quick questions — Angular Basics
 
-# ✅ What is a Component?
+1. What is Angular CLI and why is it important in Angular development?
+2. Explain the typical Angular project folder structure.
+3. What is the role of `main.ts` in an Angular application?
+4. What happens during the Angular bootstrap process?
+5. What is the difference between Standalone Components and NgModules?
+
+---
+
+## 3. Components
+
+### What is a Component?
 
 A **component** is a **small, reusable part of the user interface** in an Angular application.
 
@@ -1378,7 +1418,7 @@ A **component** is a **small, reusable part of the user interface** in an Angula
 
 ---
 
-## 🔹 What Does a Component Do?
+#### What Does a Component Do?
 
 A component is responsible for:
 
@@ -1390,7 +1430,7 @@ Each screen or section of a screen is usually a **component**.
 
 ---
 
-## 🧱 What Makes Up a Component (Conceptually)
+#### What Makes Up a Component (Conceptually)
 
 A component has **three main parts**:
 
@@ -1411,7 +1451,7 @@ A component has **three main parts**:
 
 ---
 
-## 🧠 Why Components Are Important
+#### Why Components Are Important
 
 Components help by:
 
@@ -1423,7 +1463,7 @@ Components help by:
 Without components, large apps would be **hard to manage**.
 ---
 
-# ✅ Component Metadata
+### Component Metadata
 
 In Angular, **component metadata** is provided using the `@Component` decorator.
 
@@ -1431,7 +1471,7 @@ This decorator tells Angular **everything it needs to know about a component**.
 
 ---
 
-## 🧱 Basic Component Metadata Example
+#### Basic Component Metadata Example
 
 ```ts
 @Component({
@@ -1448,7 +1488,7 @@ Now let’s break this **slowly and clearly** 👇
 
 ---
 
-## 🔹 `@Component({...})`
+#### `@Component({...})`
 
 * This is a **decorator**
 * It tells Angular:
@@ -1458,24 +1498,24 @@ Without `@Component`, Angular would treat `UserComponent` as a **normal TypeScri
 
 ---
 
-## 🔹 `selector`
+#### `selector`
 
 ```ts
 selector: 'app-user'
 ```
 
-### What it means
+##### What it means
 
 * Defines **how the component is used in HTML**
 * This becomes a **custom HTML tag**
 
-### Usage in HTML
+##### Usage in HTML
 
 ```html
 <app-user></app-user>
 ```
 
-### Important rules
+##### Important rules
 
 * Should be **unique**
 * Usually starts with `app-` or company prefix
@@ -1483,18 +1523,18 @@ selector: 'app-user'
 
 ---
 
-## 🔹 `templateUrl`
+#### `templateUrl`
 
 ```ts
 templateUrl: './user.component.html'
 ```
 
-### What it means
+##### What it means
 
 * Points to the **HTML file** for this component
 * This is what the user sees on screen
 
-### Why separate file?
+##### Why separate file?
 
 * Cleaner code
 * Easier to maintain
@@ -1502,25 +1542,25 @@ templateUrl: './user.component.html'
 
 ---
 
-## 🔹 `styleUrls`
+#### `styleUrls`
 
 ```ts
 styleUrls: ['./user.component.scss']
 ```
 
-### What it means
+##### What it means
 
 * Styles applied **only to this component**
 * Angular scopes styles automatically
 
-### Benefit
+##### Benefit
 
 * No CSS conflicts
 * Styles don’t leak to other components
 
 ---
 
-## 🔹 Component Class
+#### Component Class
 
 ```ts
 export class UserComponent {
@@ -1528,13 +1568,13 @@ export class UserComponent {
 }
 ```
 
-### What it does
+##### What it does
 
 * Holds data
 * Handles logic
 * Responds to user actions
 
-### Connection to template
+##### Connection to template
 
 ```html
 <p>{{ name }}</p>
@@ -1546,7 +1586,7 @@ Angular binds:
 
 ---
 
-## 🧠 Inline Metadata (Alternative)
+#### Inline Metadata (Alternative)
 
 Sometimes, template and styles are written **inside the component file**.
 
@@ -1558,21 +1598,21 @@ Sometimes, template and styles are written **inside the component file**.
 })
 ```
 
-### When to use
+##### When to use
 
 * Small components
 * Quick demos
 
-### When NOT to use
+##### When NOT to use
 
 * Large templates
 * Real enterprise apps
 
 ---
 
-## 🔹 Other Important Metadata Properties (Conceptual + Example)
+#### Other Important Metadata Properties (Conceptual + Example)
 
-### 🔸 `standalone`
+##### `standalone`
 
 ```ts
 standalone: true
@@ -1584,7 +1624,7 @@ standalone: true
 
 ---
 
-### 🔸 `imports`
+##### `imports`
 
 ```ts
 imports: [CommonModule, FormsModule]
@@ -1595,7 +1635,7 @@ imports: [CommonModule, FormsModule]
 
 ---
 
-### 🔸 `changeDetection`
+##### `changeDetection`
 
 ```ts
 changeDetection: ChangeDetectionStrategy.OnPush
@@ -1606,7 +1646,7 @@ changeDetection: ChangeDetectionStrategy.OnPush
 
 ---
 
-### 🔸 `providers`
+##### `providers`
 
 ```ts
 providers: [UserService]
@@ -1619,7 +1659,7 @@ Even if a service is provided in root, adding it to a component’s providers ar
 
 ---
 
-## 🔄 How Angular Uses Metadata Internally
+#### How Angular Uses Metadata Internally
 
 When Angular starts:
 
@@ -1636,19 +1676,41 @@ Below is a **clear, step-by-step explanation** of each topic with **small, focus
 
 ---
 
-# 1️⃣ Templates (HTML)
 
-## What is a Template?
+#### Quick questions — Components
+
+1. What is a component in Angular and why is it important?
+2. What is component metadata and why does Angular need it?
+3. What is the difference between templates and styles in a component?
+4. Explain the Angular component lifecycle in simple terms.
+5. What is the difference between `constructor` and `ngOnInit`?
+
+---
+
+## 4. Templates & Data Binding
+
+### Data Binding at a Glance
+
+- **Interpolation**: `{{ value }}` to read data into the view.
+- **Property binding**: `[prop]="value"` to set DOM/input properties.
+- **Event binding**: `(event)="handler($event)"` to react to user actions.
+- **Two-way binding**: `[(ngModel)]="value"` combines property + event binding.
+- **Template expressions**: lightweight logic inside bindings (no assignments or side effects).
+- **Safe navigation**: `user?.name` to guard against `null`/`undefined`.
+
+### Templates (HTML)
+
+#### What is a Template?
 
 A **template** is the HTML that defines **what the component renders** and **how data/events are bound**.
 
-### Key ideas
+##### Key ideas
 
 * Displays component data
 * Handles user events
 * Uses Angular bindings
 
-### Example
+##### Example
 
 ```html
 <!-- user.component.html -->
@@ -1673,18 +1735,18 @@ export class UserComponent {
 
 ---
 
-## 2️⃣ Styles (CSS/SCSS)
+### Styles (CSS/SCSS)
 
-### What are Component Styles?
+#### What are Component Styles?
 
 Styles defined for a component are **scoped to that component only** (no leaking).
 
-### Key ideas
+##### Key ideas
 
 * Encapsulation by default
 * Safe, conflict-free styling
 
-### Example
+##### Example
 
 ```scss
 /* user.component.scss */
@@ -1700,9 +1762,9 @@ h2 {
 
 ---
 
-# 3️⃣ Component Lifecycle
+### Component Lifecycle
 
-## What is the Lifecycle?
+#### What is the Lifecycle?
 
 The **lifecycle** is the sequence of stages a component goes through:
 **create → render → update → destroy**.
@@ -1718,7 +1780,7 @@ Think of them as **checkpoints** from creation → update → destruction.
 
 ---
 
-## 🔷 Lifecycle Order (Important)
+#### Lifecycle Order (Important)
 
 ```
 constructor
@@ -1734,9 +1796,9 @@ ngOnDestroy
 
 ---
 
-## 1️⃣ `constructor` (NOT a lifecycle hook, but important)
+#### 1️⃣ `constructor` (NOT a lifecycle hook, but important)
 
-### Purpose
+##### Purpose
 
 * Create the component instance
 * Inject dependencies
@@ -1745,7 +1807,7 @@ ngOnDestroy
 constructor(private userService: UserService) {}
 ```
 
-### Key points
+##### Key points
 
 * Runs first
 * No access to inputs
@@ -1755,9 +1817,9 @@ constructor(private userService: UserService) {}
 
 ---
 
-## 2️⃣ `ngOnChanges`
+#### 2️⃣ `ngOnChanges`
 
-### When it runs
+##### When it runs
 
 * When an **@Input() value changes**
 * Runs **before ngOnInit**
@@ -1769,16 +1831,16 @@ ngOnChanges(changes: SimpleChanges) {
 }
 ```
 
-### Use case
+##### Use case
 
 * React to input changes from parent
 * Compare previous vs current values
 
 ---
 
-## 3️⃣ `ngOnInit`
+#### 3️⃣ `ngOnInit`
 
-### When it runs
+##### When it runs
 
 * Once after component initialization
 * After first `ngOnChanges`
@@ -1789,7 +1851,7 @@ ngOnInit() {
 }
 ```
 
-### Use case
+##### Use case
 
 * API calls
 * Initial data setup
@@ -1799,9 +1861,9 @@ ngOnInit() {
 
 ---
 
-## 4️⃣ `ngDoCheck`
+#### 4️⃣ `ngDoCheck`
 
-### When it runs
+##### When it runs
 
 * On **every change detection cycle**
 
@@ -1811,7 +1873,7 @@ ngDoCheck() {
 }
 ```
 
-### Use case
+##### Use case
 
 * Custom change detection logic
 * Rarely used
@@ -1820,9 +1882,9 @@ ngDoCheck() {
 
 ---
 
-## 5️⃣ `ngAfterContentInit`
+#### 5️⃣ `ngAfterContentInit`
 
-### When it runs
+##### When it runs
 
 * Once after **content projection** (`ng-content`) is initialized
 
@@ -1832,15 +1894,15 @@ ngAfterContentInit() {
 }
 ```
 
-### Use case
+##### Use case
 
 * Work with projected content
 
 ---
 
-## 6️⃣ `ngAfterContentChecked`
+#### 6️⃣ `ngAfterContentChecked`
 
-### When it runs
+##### When it runs
 
 * After projected content is checked
 * Runs multiple times
@@ -1849,16 +1911,16 @@ ngAfterContentInit() {
 ngAfterContentChecked() {}
 ```
 
-### Use case
+##### Use case
 
 * Rare
 * Avoid heavy logic
 
 ---
 
-## 7️⃣ `ngAfterViewInit`
+#### 7️⃣ `ngAfterViewInit`
 
-### When it runs
+##### When it runs
 
 * Once after component **view & child views** are initialized
 
@@ -1868,7 +1930,7 @@ ngAfterViewInit() {
 }
 ```
 
-### Use case
+##### Use case
 
 * DOM access
 * ViewChild initialization
@@ -1878,9 +1940,9 @@ ngAfterViewInit() {
 
 ---
 
-## 8️⃣ `ngAfterViewChecked`
+#### 8️⃣ `ngAfterViewChecked`
 
-### When it runs
+##### When it runs
 
 * After every check of component view
 
@@ -1888,7 +1950,7 @@ ngAfterViewInit() {
 ngAfterViewChecked() {}
 ```
 
-### Use case
+##### Use case
 
 * Very rare
 * Debugging view updates
@@ -1897,9 +1959,9 @@ ngAfterViewChecked() {}
 
 ---
 
-## 9️⃣ `ngOnDestroy`
+#### 9️⃣ `ngOnDestroy`
 
-### When it runs
+##### When it runs
 
 * Just before component is destroyed
 
@@ -1909,7 +1971,7 @@ ngOnDestroy() {
 }
 ```
 
-### Use case
+##### Use case
 
 * Cleanup
 * Unsubscribe observables
@@ -1917,9 +1979,9 @@ ngOnDestroy() {
 * Prevent memory leaks
 
 
-## 4️⃣ `constructor` vs `ngOnInit`
+#### `constructor` vs `ngOnInit`
 
-### `constructor`
+##### `constructor`
 
 **Purpose:** Create the class instance & inject dependencies.
 
@@ -1935,7 +1997,7 @@ constructor(private userService: UserService) {
 
 ---
 
-### `ngOnInit`
+##### `ngOnInit`
 
 **Purpose:** Initialize component logic.
 
@@ -1952,16 +2014,16 @@ ngOnInit() {
   * Initialization logic
   * Subscriptions
 
-### Simple rule (remember this)
+##### Simple rule (remember this)
 
 > **constructor = setup**
 > **ngOnInit = work**
 
 ---
 
-## 5️⃣ Change Detection (Basics)
+#### Change Detection (Basics)
 
-### What is Change Detection?
+##### What is Change Detection?
 
 Change detection is how Angular **keeps the UI in sync with data**.
 
@@ -1978,7 +2040,7 @@ Angular:
 
 ---
 
-### Example
+##### Example
 
 ```ts
 count = 0;
@@ -2012,11 +2074,21 @@ I’ll start from basics and build up logically.
 ---
 
 
+#### Quick questions — Templates & Data Binding
 
+1. What is interpolation in Angular and when do you use it?
+2. What is the difference between property binding and event binding?
+3. How does two-way data binding work in Angular?
+4. What are template expressions and what rules do they follow?
+5. What is the safe navigation operator and why is it used?
 
-# ✅ Directives in Angular
+---
 
-## 🔹 What is a Directive?
+## 5. Directives
+
+### Directives in Angular
+
+#### What is a Directive?
 
 A **directive** is a class that **changes the behavior or appearance of the DOM**.
 
@@ -2030,9 +2102,9 @@ Angular has **two main types**:
 
 ---
 
-# 1️⃣ Attribute Directives
+### Attribute Directives
 
-## 🔹 What are Attribute Directives?
+#### What are Attribute Directives?
 
 Attribute directives **modify the appearance or behavior of an existing element**.
 
@@ -2041,9 +2113,9 @@ Attribute directives **modify the appearance or behavior of an existing element*
 
 ---
 
-## 🔹 Built-in Attribute Directives
+#### Built-in Attribute Directives
 
-### ✅ `ngClass`
+##### `ngClass`
 
 Dynamically adds/removes CSS classes.
 
@@ -2058,7 +2130,7 @@ Dynamically adds/removes CSS classes.
 
 ---
 
-### ✅ `ngStyle`
+##### `ngStyle`
 
 Applies styles dynamically.
 
@@ -2075,9 +2147,9 @@ Applies styles dynamically.
 
 ---
 
-# 2️⃣ Structural Directives
+### Structural Directives
 
-## 🔹 What are Structural Directives?
+#### What are Structural Directives?
 
 Structural directives **change the structure of the DOM**.
 
@@ -2088,7 +2160,7 @@ Structural directives **change the structure of the DOM**.
 
 ---
 
-## 🔹 Why `*` (Asterisk)?
+#### Why `*` (Asterisk)?
 
 The `*` is **syntactic sugar**.
 It tells Angular:
@@ -2099,13 +2171,13 @@ Internally, Angular rewrites it using `<ng-template>`.
 
 ---
 
-# 3️⃣ Built-in Structural Directives
+### Built-in Structural Directives
 
 ---
 
-## ✅ `*ngIf`
+#### `*ngIf`
 
-### Purpose
+##### Purpose
 
 Conditionally **add or remove elements**.
 
@@ -2113,7 +2185,7 @@ Conditionally **add or remove elements**.
 <p *ngIf="isLoggedIn">Welcome back!</p>
 ```
 
-### What happens internally
+##### What happens internally
 
 * If `true` → element is created
 * If `false` → element is destroyed
@@ -2125,9 +2197,9 @@ Conditionally **add or remove elements**.
 
 ---
 
-## ✅ `*ngFor`
+#### `*ngFor`
 
-### Purpose
+##### Purpose
 
 Render a list dynamically.
 
@@ -2200,7 +2272,7 @@ export class HighlightDirective {
 }
 ```
 
-### Usage
+##### Usage
 
 ```html
 <p appHighlight>Hover me</p>
@@ -2277,13 +2349,25 @@ export class IfAdminDirective {
 
 ---
 
-Below is a **clear, practical explanation of Pipes in Angular**, with **code examples**, **simple language**, and **interview-ready points**.
+
+#### Quick questions — Directives
+
+1. What is a directive and why are directives important in Angular?
+2. What is the difference between attribute and structural directives?
+3. How does `*ngIf` work internally compared to hiding elements with CSS?
+4. What is the purpose of `*ngFor` and why is `trackBy` important?
+5. When would you create a custom directive, and what problem does it solve?
 
 ---
 
-# ✅ 6️⃣ Pipes in Angular
+Below is a **clear, practical explanation of Pipes in Angular**, with **code examples**, **simple language**, and **interview-ready points**.
 
-## 🔹 What is a Pipe?
+---
+## 6. Pipes
+
+### Pipes in Angular
+
+#### What is a Pipe?
 
 A **pipe** is used to **transform data before displaying it in the template**.
 
@@ -2293,7 +2377,7 @@ Think of pipes as **formatters for display**.
 
 ---
 
-## 🔹 Why Pipes Are Useful
+#### Why Pipes Are Useful
 
 * Keep templates clean
 * Avoid formatting logic in components
@@ -2302,15 +2386,15 @@ Think of pipes as **formatters for display**.
 
 ---
 
-# 1️⃣ Built-in Pipes
+### Built-in Pipes
 
 Angular provides many **ready-to-use pipes**.
 
 ---
 
-## ✅ Common Built-in Pipes
+#### Common Built-in Pipes
 
-### 🔸 `date`
+##### `date`
 
 Formats dates.
 
@@ -2322,7 +2406,7 @@ Formats dates.
 
 ---
 
-### 🔸 `uppercase` / `lowercase`
+##### `uppercase` / `lowercase`
 
 Changes text case.
 
@@ -2332,7 +2416,7 @@ Changes text case.
 
 ---
 
-### 🔸 `currency`
+##### `currency`
 
 Formats numbers as currency.
 
@@ -2342,7 +2426,7 @@ Formats numbers as currency.
 
 ---
 
-### 🔸 `percent`
+##### `percent`
 
 Formats numbers as percentages.
 
@@ -2352,7 +2436,7 @@ Formats numbers as percentages.
 
 ---
 
-### 🔸 `slice`
+##### `slice`
 
 Extracts part of a string or array.
 
@@ -2362,7 +2446,7 @@ Extracts part of a string or array.
 
 ---
 
-### 🔸 `async`
+##### `async`
 
 Handles observables or promises automatically.
 
@@ -2375,9 +2459,9 @@ Handles observables or promises automatically.
 
 ---
 
-# 2️⃣ Custom Pipes
+### Custom Pipes
 
-## 🔹 When Do We Need Custom Pipes?
+#### When Do We Need Custom Pipes?
 
 When:
 
@@ -2387,9 +2471,9 @@ When:
 
 ---
 
-## 🔹 Example: Custom Pipe (Title Case)
+#### Example: Custom Pipe (Title Case)
 
-### Pipe
+##### Pipe
 
 ```ts
 @Pipe({
@@ -2416,20 +2500,20 @@ export class TitleCasePipe implements PipeTransform {
 
 ---
 
-## 🧠 Important Rule
+#### Important Rule
 
 > **Use pipes only for UI formatting**
 > ❌ Do NOT put heavy business logic in pipes
 
 ---
 
-# 3️⃣ Pure vs Impure Pipes (VERY IMPORTANT)
+### Pure vs Impure Pipes (VERY IMPORTANT)
 
 ---
 
-## 🔹 Pure Pipes (Default)
+#### Pure Pipes (Default)
 
-### What they are
+##### What they are
 
 * Run **only when input value changes**
 * Faster and more efficient
@@ -2441,7 +2525,7 @@ export class TitleCasePipe implements PipeTransform {
 })
 ```
 
-### When Angular runs them
+##### When Angular runs them
 
 * Primitive value changes
 * Object reference changes
@@ -2454,9 +2538,9 @@ export class TitleCasePipe implements PipeTransform {
 
 ---
 
-## 🔹 Impure Pipes
+#### Impure Pipes
 
-### What they are
+##### What they are
 
 * Run **on every change detection**
 * Slower
@@ -2468,7 +2552,7 @@ export class TitleCasePipe implements PipeTransform {
 })
 ```
 
-### When Angular runs them
+##### When Angular runs them
 
 * Every UI update
 * Even when input hasn’t changed
@@ -2477,7 +2561,7 @@ export class TitleCasePipe implements PipeTransform {
 
 ---
 
-## ⚠️ Why Impure Pipes Are Dangerous
+#### Why Impure Pipes Are Dangerous
 
 * Run very frequently
 * Can cause performance issues
@@ -2490,7 +2574,7 @@ export class TitleCasePipe implements PipeTransform {
 
 ---
 
-# 🔁 Pure vs Impure (Easy Table)
+### Pure vs Impure (Easy Table)
 
 | Feature     | Pure Pipe     | Impure Pipe            |
 | ----------- | ------------- | ---------------------- |
@@ -2500,3 +2584,21 @@ export class TitleCasePipe implements PipeTransform {
 | Use case    | Formatting    | Special edge cases     |
 
 ---
+
+#### Quick questions — Pipes
+
+1. What is a pipe in Angular and why is it used?
+2. Name some commonly used built-in pipes and their purpose.
+3. When would you create a custom pipe?
+4. What is the difference between pure and impure pipes?
+5. Why can impure pipes negatively affect application performance?
+
+---
+
+## 🎯 Bonus: Common Follow-Up Questions
+
+* Where should heavy logic go: component, pipe, or service?
+* How does Angular keep the UI in sync with data?
+* What mistakes do beginners commonly make in Angular fundamentals?
+* How does Angular ensure scalability for large applications?
+* What Angular fundamentals matter most in real projects?
