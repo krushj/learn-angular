@@ -1,0 +1,108 @@
+<div class="container">
+    <h3>User registration form</h3>
+    <form [formGroup]="form" class="form">
+        <div class="form-field">
+            <label for="type">User Type: </label>
+            <select id="type" formControlName="type">
+                <option value="PERSONAL">Personal</option>
+                <option value="BUSINESS">Business</option>
+            </select>
+            @if (type.touched) {
+                @if(type.hasError('required')){
+                    <span class="error">Type is required</span>
+                }
+            }
+        </div>
+
+        <div class="form-field"> 
+            <label for="name">Name:</label>
+            <input id="name" formControlName="name" />
+            @if (name.touched) {
+                @if(name.hasError('required')){
+                    <span class="error">Name is required</span>
+                }
+            }
+        </div>
+        <div class="form-field">
+            <label for="email">Email:</label>
+            <input id="email" formControlName="email" />
+
+            @if (email.touched) {
+                @if(email.hasError('required')){
+                    <span class="error">Email is required</span>
+                } @else if(email.hasError('')){
+                    <span class="error">Email is required</span>
+                } @else if(email.hasError('emailTaken')){
+                    <span class="error">Email already exist.</span>
+                }
+            }
+        </div>
+        <div class="form-field">
+            <label for="password">Password:</label>
+            <input id="password" formControlName="password" />
+
+            @if (password.touched) {
+                @if(password.hasError('required')){
+                    <span class="error">Password is required</span>
+                }
+            }
+        </div>
+        <div class="form-field">
+            <label for="confirmPassword">Confirm Password:</label>
+            <input id="confirmPassword" formControlName="confirmPassword" />
+            @if (confirmPassword.touched) {
+                @if (form.hasError('passwordMismatch')) {
+                  <span class="error">Passwords do not match</span>
+                }
+            }
+        </div>
+        <div class="form-field"> 
+            <label for="companyName">Company Name:</label>
+            <input id="companyName" formControlName="companyName" />
+            @if (companyName.touched) {
+                @if(companyName.hasError('required')){
+                    <span class="error">Company name is required</span>
+                }
+            }
+        </div>
+        <div class="form-field">
+            <label for="password">GST Number:</label>
+            <input id="gstNumber" formControlName="gstNumber" />
+            @if (gstNumber.touched) {
+                @if(gstNumber.hasError('required')){
+                    <span class="error">GST number is required</span>
+                } @else if (gstNumber.hasError('pattern')){
+                    <span class="error">Invalid GST number</span>
+                }
+            }
+        </div>
+        <div class="form-field"> <label for="totalEmployees">Number of employees:</label>
+            <input type="number" name="totalEmployees" formControlName="totalEmployees" />
+        </div>
+
+        <div class="form-field skills-container" formArrayName="skills">
+            <label>
+                <button (click)="addSkill()"> + </button> Skills:
+            </label>
+            @for (skill of skills.controls; let i = $index; track i) {
+                <div class="form-field-level-2">
+                    <div class="input-container">
+                        <input [formControlName]="i" />
+                        <span (click)="removeSkill(i)">X</span>
+                    </div>
+                    @if (skill.touched) {
+                        @if(skill.hasError('required')){
+                            <span class="error">Skill is required</span>
+                        }
+                    }
+                </div>
+            }
+        </div>
+        <div class="form-field">
+            <button (click)="formSubmit()" [disabled]="form.invalid">
+                Register
+            </button>
+        </div>
+    </form>
+
+</div>

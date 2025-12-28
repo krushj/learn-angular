@@ -4,7 +4,7 @@
 
 ---
 
-## Phase 1 — Fundamentals ([full notes](documentation/FUNDAMENTALS.md))
+## Phase 1 — Core Concept ([full notes](documentation/CORE.md))
 
 1. Introduction  
    - What is Angular?  
@@ -46,7 +46,7 @@
 
 ---
 
-## Phase 2 — Core Angular Concepts
+## Phase 2 — Advanced Angular Concepts
 
 7. Dependency Injection (DI)  
    - What is DI?  

@@ -1,0 +1,85 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+
+    .form {
+        padding: 0.5rem;
+        border: 1px solid;
+        border-radius: 0.25rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+        width: 400px;
+
+        .grid-row {
+            grid-column: 1 / -1;
+        }
+
+        .form-field{
+            display: flex;
+            flex-direction: column;
+            row-gap: 0.25rem;
+
+            .error{
+                color: red;
+                font-size: 0.75rem;
+                
+            }
+
+
+            input, select {
+                outline: none;
+                height: 30px;
+                box-sizing: border-box;
+            }
+
+            &.skills-container{
+                @extend .grid-row;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 0.25rem;
+
+                label {
+                    width: 100%;
+                }
+
+                .form-field-level-2{
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 0.25rem;
+
+                    .input-container{
+                        display: flex;
+                        align-items: center;
+                        input {
+                            width: -webkit-fill-available;
+                        }
+                        span {
+                            cursor: pointer;
+                            position: relative;
+                            margin-left: -20px;
+                        }
+                    }
+                }
+            }
+
+            &:last-child{
+                @extend .grid-row;
+                margin-top: 0.5rem;
+                align-items: center;
+                button {
+                    width: 160px;
+                    height: 30px;
+                    border-radius: 0.25rem;
+                }
+            }
+        }
+
+    }
+}
